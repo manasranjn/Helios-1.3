@@ -236,3 +236,223 @@ isdecimal() :- It checks if the value is decimal or not, it returns value in Boo
 count() :- It counts total occurrence of a substring. eg: print(s.count('l'))
 startswith() :- It checks if the string starts with a substring , it returns value in Boolean. eg: print(s.startswith('h'))
 endswith() :- It checks if the string end with a substring, it returns value in Boolean. eg: print(s.endswith())
+
+##functions in python :-
+a function is a reusable block of code that perform a specific task. Functions help organize code reduce repetition and improve readability.
+Once we declare a function, we can execute it multiple times whenever we need by calling the function. To create a function we have to use a keyword "def" followed by the function name , (), ; and a code block.
+
+Functions are two types : Predefined function and user defined function.
+Predefined function means, a function which is already declared by the python developer to perform a specific task. To use a pre defined function we just need to call the function.
+eg:
+User defined function means a function which is created or declared by the user to perform a specific task. eg: add, sum
+Functions can return a value using a return statement/keyword.
+Syntax : def functionName():
+  #instructions
+e.g:- def sum():
+  print (10+20)
+
+user defined functions are two types :
+1. Functions without parameter
+2. Functions with parameter: 
+eg: def sub(a,b)
+  return a-b
+
+  sub(10,20), sub(200,100)
+- we can pass the default value a parameter in a function to handle error if argument is missing .
+- We can switch the position of parameters while passing value as an argument but we have to mention the parameter name to assigning the value.
+
+##Dictionary
+a dictionary is a mutable and unordered collection of key value pairs.
+Each key must be unique.
+dictionary can store any type of values.
+Dictionary are denoted by {}
+
+#Characteristic of Dictionary:
+1. Key value pair - Data is stored as pairs by using single colon. e.g: key:value.
+2. Unordered - Items are not stored in a sequence and the order may change.
+3. Mutable - Dictionary can be modified after created.
+4. No Duplicate key - No key should be duplicate, duplicate key will override the previous value.
+-> To create a dictionary either we use curly braces {} or we can use dict() constructor.
+e.g: example = dict(key = value, key= value)
+-Also we can create an empty dictionary.
+e.g: my_dict = {}
+Operations on Dictionary:-
+1. To add a new key :-
+dictionaryName['keyName'] = Value
+2. To edit a key:-
+dictionaryName['keyName'] = Value
+3. To delete an key :-
+del dictionaryName['keyname']
+4. To iterate through a dictionary :-
+(a). for key,value in dictionaryName.items():
+  print(key,value)
+(b). for key in dictionaryName:
+  print(key)
+
+
+OOP(Object oriented programming)
+
+It is a programming paradigm that is based on the concept of "objects" which can contains data and code that manipulates the data.
+
+Key concept of OOPs:-
+1.Class:- A class is a blueprint for creating object that encapsulate data and methods.
+-Class can be created by "class" keyword
+-A class Can have constructor (__int__) and define their own behavior via methods.
+Syntax: class className:
+  constructor(self, parameters):
+  self.variable = parameter
+  def methodName(self):
+  instructions
+
+2. Object: An object is an instance of a class.
+-Objects have attributes/properties and method.
+-We can create multiple objects from the same class, each with their own attribute values.
+Syntax:-
+  object1 = className(arguments)
+
+3.Methods :- Methods are functions defined inside a class that describes the behaviors of an object.
+-All methods have "self" keyword as their first parameter, which allows them to access and modify the object's attribute.
+Syntax:- Class className (self):
+  iinstructions
+
+4. Self keyword :-Self refers to the current object or current instance of the class.
+-It enables each object to maintain it's own attribute values.
+-Without self keyword, python would not know which object's data to use in methods or constructor.
+
+5. Constructor:-A constructor is a special method which is called automatically when an object is created from a class.
+-It is used to initialize the object's attribute or set initial state.
+__init__ is the constructor in python, which is defined inside the class.
+Syntax:-
+  class className:
+  constructor(self, parameters):
+  self.variable = parameter
+
+Types of Constructor:-
+a> Default Constructor:- It takes no arguments except ‘self’ keyword.
+b> Parameterized Constructor:- It takes one or more parameters including self.
+-It initializes objects attribute with user value.
+
+Polymorphism:
+-It means "many forms". It allows a function or method with the same name to perform differently depending on the type of object.
+e.g: class Dog:
+  def speak(self):
+  print("Woof")
+class Cat:
+  def speak(self):
+  print("Meow")
+dog1 = Dog()
+dog1.speak()
+cat1 = Cat()
+cat1.speak()
+
+Encapsulation:- Encapsulation is an OOP principle that involves binding data and methods within a class and restricting direct access to some of the class's components.
+-It improves security, and maintainability of code by controlling how data is accessed and updated.
+-We can achieve encapsulation by converting public variables into private variable by using double underscore(__) before the variable name.
+-It Keeps our code organized and secure by ensuring that objects protect their own data and expression only what is necessary.
+eg: class Bank:
+  def __init__(self, account , balance):
+  self.__balance = balance
+  self.account = account
+  def desposit(self,amount):
+  if amount > 0:
+  self.__balance += amount
+  else:
+  print("Invalid amount")
+  def withdraw(self,amount):
+  if amount > 0 and amount <= self.__balance:
+  self.__balance -= amount
+  else:
+  print("Invalid amount")
+  def get_balance(self):
+  return self.__balance
+account1 = Bank("123456", 1000)
+print(account1.get_balance())
+account1.desposit(100)
+print(account1.get_balance())
+account1.withdraw(500)
+print(account1.get_balance())
+
+Abstraction: Abstraction means hiding the internal details and showing only the necessary features.
+-In Python it can be implemented by using ABC(Abstract Base Classes) and the @abstract methods.
+Syntax:-
+from abc import ABC, abstractmethod
+class ClassName(ABC):
+ 	@abstractmethod
+ 	def methodName(self):
+ 		pass
+ 
+-Subclass must implement the abstract method.
+
+Inheritance: It allows a class to inherit methods and properties from another class.
+-The class from where we inherit is called parent class, and the class which inherits is called child class.
+-Inheritance promotes code reusability.
+Syntax:-
+class ParentClass:
+ 	def methodName(self):
+ 		//instruction
+ 
+class ChildClass(ParentClass):
+ 	//instructions
+-Inheritance extends parent class functionality.
+
+Error:-
+Errors in programming referred to bugs or problems within a program that prevents it from functioning.
+-There are 4 types of errors in Python:-
+ 	1)Syntax Error :- Mistakes in code structure like missing semicolon, spelling mistake for keywords, which detected before execution.
+ 	2)Runtime Error :- Occurs while code runs, such as ZeroDivisionError.
+ 	3)Logical Error :- Code runs but produces unexpected results due to wrong logic.
+ 	4)Indentation Error :- Occurs due to incorrectly indented code blocks.
+-Errors in software or program is called bugs, and fixing errors or bugs is called debugging.
+-Some common errors are:- TypeError, ZeroDivisionError, ImportError, etc.
+
+Exception: An exception is a special type error that interrupts normal flow of program.
+-When an error occurs, Python creates an exception object that contains details about the error or problem, and then throws it to stop the execution.
+-Python includes many built-in exception classes, all are derived from Exception.
+
+Exception Handling: Exception handling separates error detection from business logic using try-except-finally blocks.
+ 	try block:- We write codes in try block which may occurs exception or error.
+ 	except block:- Handles exceptions, also we can specify specific type for response.
+ 	finally block:- It runs always, whether there is exception or not.
+Syntax:-
+try:
+ 	//instruction
+except:
+ 	//instruction
+finally:
+ 	//instruction
+-We can specify specific and multiple exception block within a program, which makes programs safer and easier to debug, and allows custom responses to differ error types.
+
+##NumPy: NumPy is a powerful python library for numerical computing which is known for its fast, versatile and advanced mathematical capabilities
+-NumPy is an open-source library developed to perform numerical operations on large, multidimensional array and matrices
+-NumPy stand for numerical Python
+-It supports various mathematical algebraic and statistical functions making it easy for data science and machine learning
+-NumPy arrays are known as nD arrays representing homogenous collection of data delivering up to 50 times faster than python lists.
+
+# Difference between array and python list
+NumPy arrays called homogeneous type of data while list calls heterogeneous type of data.
+NumPy arrays is much faster for large data-set due to its memory layout but lists are slower because of their dynamic structure.
+NumPy arrays supports advanced mathematical which is compare with list.
+NumPy arrays consume less memory as they are stored in contiguous memory blocks.
+lists are mutable but NumPy arrays are immutable.
+NumPy arrays are used for numeric computation while python lists are used for general purpose only.
+
+-itemSize Operator:  It gives the size in bytes of each element in a NumPy array determined by its datatype.
+-dtype Operator: It returns the datatype of a NumPy array like int32 float64 etc.
+-size Operator: It returns the total numbers of elements in the array
+-shape Operator: It returns a tuple indicating the size of the array along each dimension. ex: (2,3)
+
+##Array Creation and basic manipulation Methods
+NumPy offers functions to create different different types of arrays conveniently, the methods are:
+1.array- It creates arrays from Python list
+2.zeros()- It creates an array filled with zeros only
+3.ones()- It creates an array filled with ones only
+4.empty()- It Creates an uninitialized array
+5.arrange()- It creates an array with regularly Spaced Values. It accepts three arguments starting range, ending range and steps respectively.
+6.reshape()- It reshape an array without changing the original data. It accepts two arguments row and column respectively.
+7.linspace()- It creates an array within a certain range where each elements spaced linearly from each other. It accepts three arguments starting point, ending point and numbers of elements
+8.min and max - It returns minimum value and maximum value respectively
+9.sum()- It returns the sum of all the numbers in an array, also we can sum the values row wise and column wise by providing axis value where 0 means column and 1 means row
+10.sqrt()- it is used to find the square root of a NumPy array
+11.dot()- It is used to find the matrix product of an NumPy array
+12.power()- It is used to find the power of an NumPy array.
+13.ravel()-It is used to flatten a n-dimensional array to 1-D array
