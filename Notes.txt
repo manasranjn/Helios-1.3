@@ -456,3 +456,27 @@ NumPy offers functions to create different different types of arrays convenientl
 11.dot()- It is used to find the matrix product of an NumPy array
 12.power()- It is used to find the power of an NumPy array.
 13.ravel()-It is used to flatten a n-dimensional array to 1-D array
+
+
+##Indexing in NumPy array:-
+NumPy array supports indexing which helps us to access data.
+We can access a single element by using its index value.
+NumPy array also supports negative indexing same as python list.
+For 2-D array use comma separated indices [[1,2],[3,4]] first value is row and second value is column.
+
+##Slicing:
+We can extract a range of elements from an array by using slicing, The multidimensional array: arr[0:2, 1:5] selects a block of row and columns
+
+Iteration:
+We can iterate over an array with a simple for loop.
+Syntax : for i in array, It iterates over an 1-D arrays
+for multidimensional use nested loop
+Syntax : for r in array, Here r iterates over each row
+
+Stacking:
+We can combine arrays which called stacking, There are two ways to stack arrays:
+1.Vertically: To stack array vertically we have to use 'V-Stack' method
+2.Horizontally: To stack array horizontally or side by side we have use 'h-stack' method
+
+
+##Boolean Indexing: We can store an array as Boolean by using conditions. ex: arr>5, arr<5 etc. This technique is great for filtering data and creating new array with selected value.
