@@ -71,7 +71,7 @@ vertical = np.vstack([arr1, arr2])
 # print(vertical)
 
 horizontal = np.hstack([arr1,arr2])
-# print(horizontal)
+print(horizontal)
 
 concat = np.concatenate([arr1,arr2])
-# print(concat)
+print(concat)
